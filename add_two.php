@@ -12,11 +12,11 @@
             $input = htmlspecialchars(stripslashes(trim($_POST["sacrifice"])));
 
             // probably never occur
-            if (!is_numeric($input)) {
+            if (!is_numeric($input) || $input === "") {
                 echo "Not a number!";
+            } else {
+                echo $input + 2; 
             }
-
-            echo $input + 2 
             ?>
         </div>
          <a href="index.php" class="bg-white font-bold rounded-md px-4 py-2 border-2 border-black hover:bg-black hover:text-white">TRY AGAIN...</a>
